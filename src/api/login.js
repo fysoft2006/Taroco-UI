@@ -23,7 +23,7 @@ export const loginByUsername = (username, password, code, randomStr) => {
   return request({
     url: '/auth/oauth/token',
     headers: {
-      'Authorization': 'Basic cGlnOnBpZw=='
+      'Authorization': 'Basic dGFyb2NvOnRhcm9jbw=='
     },
     method: 'post',
     params: { username, password, randomStr, code, grant_type, scope }
@@ -36,7 +36,7 @@ export function mobileLogin(mobile, code) {
   return request({
     url: '/auth/mobile/token',
     headers: {
-      'Authorization': 'Basic cGlnOnBpZw=='
+      'Authorization': 'Basic dGFyb2NvOnRhcm9jbw=='
     },
     method: 'post',
     params: { mobile, code, grant_type, scope }
