@@ -29,8 +29,6 @@ router.beforeEach((to, from, next) => {
     } else {
       if (store.getters.roles.length === 0) {
         store.dispatch('GetUserInfo').then(res => {
-          const roles = res.roles;
-          store.commit('SET_ROLES', roles);
           next({ ...to,
             replace: true
           })

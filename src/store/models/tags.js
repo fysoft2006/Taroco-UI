@@ -40,7 +40,7 @@ const navs = {
         tag: getStore({ name: 'tag' }) || tagObj,
         tagWel: {
             label: "首页",
-            value: "/wel/index"
+            value: "/dashboard"
         },
         tagCurrent: getStore({ name: 'tagCurrent' }) || [],
     },

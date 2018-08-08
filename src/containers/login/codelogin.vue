@@ -93,7 +93,7 @@ export default {
           url: "/admin/smsCode/" + this.loginForm.mobile,
           method: "get"
         }).then(response => {
-          if (response.data.data) {
+          if (response.data.status === 'SUCCESSED') {
             this.timer();
             this.$message.success("验证码发送成功");
           } else {

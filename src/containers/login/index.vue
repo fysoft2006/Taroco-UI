@@ -15,9 +15,9 @@
           <el-tab-pane label="用户密码" name="user">
             <userLogin></userLogin>
           </el-tab-pane>
-          <el-tab-pane label="短信验证码" name="code">
+          <!-- <el-tab-pane label="短信验证码" name="code">
             <codeLogin></codeLogin>
-          </el-tab-pane>
+          </el-tab-pane> -->
           <!-- <el-tab-pane label="第三方授权登录" name="third">
             <thirdLogin></thirdLogin>
           </el-tab-pane> -->

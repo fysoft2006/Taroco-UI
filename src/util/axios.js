@@ -45,9 +45,9 @@ axios.interceptors.response.use(data => {
   }
   NProgress.done()
   return data;
-}, error => {
+}, (data, error) => {
   NProgress.done()
-  if (error.response.data.status && error.response.data.status === 'FAILED') {
+  if (error.response && error.response.data && error.response.data.status && error.response.data.status === 'FAILED') {
     let errMsg = error.response.data.errorMessage;
     if (!validatenull(errMsg)) {
       Message({
@@ -56,6 +56,7 @@ axios.interceptors.response.use(data => {
       })
     }
   } else {
+    console.error(error);
     let errMsg = error.toString()
     let code = errMsg.substr(errMsg.indexOf('code') + 5)
     Message({

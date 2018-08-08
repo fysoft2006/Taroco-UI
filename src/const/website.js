@@ -1,7 +1,7 @@
 export default {
   title: "Taroco",
   logo: "Taroco",
-  author: "微服务敏捷开发",
+  author: "liuht",
   whiteList: ["/login", "/404", "/401", "/lock"],
   info: {
     title: "Taroco 微服务敏捷开发",

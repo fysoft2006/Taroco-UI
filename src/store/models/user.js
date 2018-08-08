@@ -133,7 +133,7 @@ const user = {
     }) {
       return new Promise((resolve, reject) => {
         getUserInfo(state.access_token).then(response => {
-          const data = response.data.data
+          const data = response.data.result
           commit('SET_ROLES', data.roles)
           commit('SET_USER_INFO', data.sysUser)
           commit('SET_PERMISSIONS', data.permissions)

@@ -11,10 +11,6 @@
     }" 
     @click.stop="changeCollapse"
     />
-    <el-breadcrumb class="breadcrumb" separator="/">
-			<el-breadcrumb-item v-for="item in currentPath" :to="{ path: item.path}" :key="item.path">{{item.title}}</el-breadcrumb-item>
-		</el-breadcrumb>
-
     <div class="right">
       <ul style="font-size: 0">
         <li class="message">
@@ -26,7 +22,7 @@
           <el-dropdown>
             <span class="el-dropdown-link">
               <img class="user-image" src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png">
-              <span class="username">Jack Li</span>
+              <span class="username">${{userInfo.username}}</span>
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
@@ -41,7 +37,7 @@
                   <span>设置</span>
                 </span>
               </el-dropdown-item>
-              <el-dropdown-item divided>
+              <el-dropdown-item divided @click.native="logout">
                 <span>
                   <i class="anticon ant-icon-poweroff"></i>
                   <span>退出登录</span>
@@ -56,18 +52,33 @@
 </template>
 
 <script>
-
+import { mapState } from "vuex";
 export default {
-
   name: 'HeaderLayout',
   props: {
-    isCollapse: Boolean,
-    currentPath: Array
+    isCollapse: Boolean
+  },
+  computed: {
+    ...mapState({
+      userInfo: state => state.user.userInfo
+    })
   },
   methods: {
   	changeCollapse () {
   		this.$store.dispatch('changeCollapse')
-  	}
+    },
+    logout() {
+      this.$confirm("是否退出系统, 是否继续?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      }).then(() => {
+        this.$store.dispatch("LogOut").then(() => {
+          alert(1);
+          this.$router.push({ path: "/login" });
+        });
+      });
+    }
   }
 }
 </script>

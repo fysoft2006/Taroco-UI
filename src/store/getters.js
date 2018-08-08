@@ -18,10 +18,10 @@
 const getters = {
   website: state => state.global.website,
   isCollapse: state => state.global.isCollapse,
-  currentPath: state => state.global.currentPath,
   tagList: state => state.tags.tagList,
   tagCurrent: state => state.tags.tagCurrent,
   tagWel: state => state.tags.tagWel,
+  tag: state => state.tags.tag,
   access_token: state => state.user.access_token,
   refresh_token: state => state.user.refresh_token,
   roles: state => state.user.roles,

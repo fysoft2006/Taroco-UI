@@ -5,35 +5,11 @@
 */
 <template>
 	<el-container class="thjk-aside" style="height:100%">
-		<el-row 
-			direction="vertical" 
-			class="left-side"
-		>
-			<div class="logo" :class="{'collapse-sm':isCollapse}">
-				<a href="#/">
-					<img class="img" src="../assets/logo.png">
-					<h1>Taroco UI</h1>
-				</a>
-			</div>
-			<el-aside>
-				<el-menu default-active="/dashboard" router class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-					<el-menu-item index="/dashboard">
-						<i class="anticon ant-icon-home"></i>
-						<span slot="title">首页</span>
-					</el-menu-item>
-					<el-submenu v-for="(item, index) in menuList" :key="item.path" :index="item.path">
-						<template slot="title">
-							<i class="anticon" :class="item.icon"></i>
-							<span slot="title">{{item.title}}</span>
-						</template>
-						<el-menu-item v-for="ch in item.children" :key="ch.path" :index="item.path + '/' + ch.path">{{ch.title}}</el-menu-item>
-					</el-submenu>
-				</el-menu>
-			</el-aside>
-		</el-row>
+		<sidebar></sidebar>
 		<el-container>
-			<header-layout :isCollapse="isCollapse" :currentPath="currentPath"></header-layout>
-			<el-main style="height: 100%">
+			<header-layout :isCollapse="isCollapse"></header-layout>
+			<tags></tags>
+			<el-main>
 				<router-view />
 			</el-main>
 			<el-footer>
@@ -44,15 +20,16 @@
 </template>
 
 <script>
-import HeaderLayout from './HeaderLayout'
+import HeaderLayout from './HeaderLayout';
+import tags from './tags';
+import sidebar from "./sidebar/";
 import { mapState, mapGetters } from 'vuex'
 export default {
 	name: 'BasicLayout',
 	// 计算属性
   	computed: {
   		...mapState({
-			isCollapse: state => state.global.isCollapse,
-			currentPath: state => state.global.currentPath
+			isCollapse: state => state.global.isCollapse
 		}),
 		...mapGetters({
 			menuList: 'menu'
@@ -67,7 +44,7 @@ export default {
 		}
 	},
 	components: {
-		HeaderLayout
+		HeaderLayout, tags, sidebar
 	}
 }
 </script>
@@ -80,16 +57,9 @@ export default {
 	}
 
 	.#{$--prefixClass}-aside {
-
-		.left-side {
-			height:100%;
-			background-color:#001529;
-		}
-
 		.collapse-sm {
 			width: 64px !important;
 		}
-
 		.logo {
 			width: 100%;
 			height: 64px;
@@ -115,13 +85,11 @@ export default {
 			}
 		}
 
-
 		.el-aside {
-
 			width: auto !important;
 			background-color: transparent;
 			overflow-x: hidden;
-
+			height: 100%;
 			.el-menu {
 				border-right: 1px solid $--menu-item-fill;
 			}
@@ -169,8 +137,8 @@ export default {
 		.global-footer-copyright {
 			line-height: 60px;
 			color: rgba(0,0,0,.45);
-    	font-size: 14px;
-    	text-align: center;
+    		font-size: 14px;
+    		text-align: center;
 		}
 	}
 	
