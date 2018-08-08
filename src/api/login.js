@@ -16,6 +16,7 @@
  */
 
 import request from '@/util/axios'
+import {config} from '@/util/config';
 
 export const loginByUsername = (username, password, code, randomStr) => {
   var grant_type = 'password'
@@ -23,7 +24,7 @@ export const loginByUsername = (username, password, code, randomStr) => {
   return request({
     url: '/auth/oauth/token',
     headers: {
-      'Authorization': 'Basic dGFyb2NvOnRhcm9jbw=='
+      'Authorization': 'Basic ' + config.clientSec
     },
     method: 'post',
     params: { username, password, randomStr, code, grant_type, scope }
@@ -36,7 +37,7 @@ export function mobileLogin(mobile, code) {
   return request({
     url: '/auth/mobile/token',
     headers: {
-      'Authorization': 'Basic dGFyb2NvOnRhcm9jbw=='
+      'Authorization': 'Basic ' + config.clientSec
     },
     method: 'post',
     params: { mobile, code, grant_type, scope }

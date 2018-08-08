@@ -88,7 +88,6 @@ const user = {
           setToken(data.access_token)
           commit('SET_ACCESS_TOKEN', data.access_token)
           commit('SET_REFRESH_TOKEN', data.refresh_token)
-          commit('CLEAR_LOCK')
           resolve()
         }).catch(error => {
           reject(error)
@@ -108,7 +107,6 @@ const user = {
           setToken(data.access_token)
           commit('SET_ACCESS_TOKEN', data.access_token)
           commit('SET_REFRESH_TOKEN', data.refresh_token)
-          commit('CLEAR_LOCK')
           resolve()
         }).catch(error => {
           reject(error)
