@@ -16,6 +16,11 @@
  */
 
 const getters = {
+  theme: state => state.common.theme,
+  isCollapse: state => state.common.isCollapse,
+  isLock: state => state.common.isLock,
+  isFullScren: state => state.common.isFullScren,
+  lockPasswd: state => state.common.lockPasswd,
   website: state => state.global.website,
   isCollapse: state => state.global.isCollapse,
   tagList: state => state.tags.tagList,

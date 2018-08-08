@@ -15,7 +15,7 @@ Vue.use(VueAxios, axios)
 
 import './element-ui'
 
-import '@/styles/main.scss'
+import '@/styles/common.scss'
 
 Vue.config.productionTip = false
 

@@ -1,7 +1,6 @@
 .sidebar-container {
   background: #00142a;
   transition: width .6s;
-  height: 100%;
   &.is-active {
     width: 64px !important;
   }
