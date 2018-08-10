@@ -1,117 +1,229 @@
 <p align="center">
- <img src="https://img.shields.io/circleci/project/vuejs/vue/dev.svg" alt="Build Status">
-  <img src="https://img.shields.io/badge/Spring%20Cloud-EdgwareSR3-blue.svg" alt="Coverage Status">
-  <img src="https://img.shields.io/badge/Spring%20Boot-1.5.12-blue.svg" alt="Downloads">
+  <img src="https://img.shields.io/circleci/project/vuejs/vue/dev.svg" alt="Build Status">
   <img src="https://img.shields.io/badge/npm-v5.5.1-blue.svg" alt="Version">
   <img src="https://img.shields.io/npm/l/vue.svg" alt="License">
 </p>
 
-<h2 align="center">Supporting Pig Developer Team</h2> 
 
-   
-### 在线体验
-地址： http://preview.pig4cloud.com
+#### 简介
 
-### 项目官网
-文档、视频：https://pig4cloud.com
+Avue是基于[Vue.js](https://github.com/vuejs/vue)和[element](https://github.com/ElemeFE/element)的快速开发框架 它的核心是数据驱动UI的思想，让我们从繁琐的crud开发中解脱出来，它的写法类似easyUI，但是写起来比easyui更容易，因为它是基础数据双向绑定以及其他vue的特性。同时不知局限于crud，它还有我们经常用的一些组件例如，表单，数据展示卡，人物展示卡等，更多的组件还在开发  
 
-### 配套代码
-<a href="https://gitee.com/log4j/pig-ui" target="_blank">pig-ui</a>、<a href="https://gitee.com/cqzqxq_lxh/pig-config" target="_blank">pig-config</a>  
+### avue2.x来了！！
+avue2.x重磅来袭！与1.0.x版本截然不同！！  
+不只是后台模板解决方案，更像是页面开发神器，积木拼装的概念，简单的拼装快速实现业务场景复杂的需求  
+  
+核心:数据驱动视图  
+  
+亮点:  
+1.只需要配置简单的json属性，即可实现复杂的页面  
+2.配置不同的属性，实现不同的控件效果和业务逻辑（需要一个上传图片的功能，配置属性为upload,和图片上传后台接口即可)  
+3.配置字典接口，全局字典自动加载无需操心label和value值的对应
+4.简单配置即可实现分步骤表单提交，多选项卡表单提交，等其他复杂的表单  
+5.不需要写大量html和css，只需要一个json即可完成你的页面  
+6.解放手写大量重复crud和form表单功能，只要维护一个json就好  
+7.让你轻松完成工作，有更多的时间去泡妹子  
+  
+演示地址:[http://122.4.247.156:8000/#/login](http://122.4.247.156:8000/#/login)  
+重点在form表单和crud表格
 
-### 前端解决方案
-https://gitee.com/smallweigit/avue
+适合人群:  
+1.常年撸后端，对前端页面有恐惧心里  
+2.刚入门vue，需要写一些复杂的业务场景  
+3.干着大量重复的crud，机械式劳动，浪费时间  
+4.前端小白，没用过很多框架，没有很多经验  
 
-### 分支介绍
-分支 | 介绍
----|---
-master | 稳定版本，推荐使用  
-dev | 开发分支，bug修复分支
-local | 配置中心本地化，开发使用不建议生产
-redis | 提供cachecloud的整合方案
- 
- ### now
-``` lua
-pig
-├── pig-ui -- element-vue-admin实现[9528]
-├── pig-auth -- 授权服务提供[3000]
-├── pig-common -- 系统公共模块 
-├── pig-config -- 配置中心[4001]
-├── pig-eureka -- 服务注册与发现[1025]
-├── pig-gateway -- ZUUL网关[9999]
-├── pig-modules -- 微服务模块
-├    ├── pig-daemon-service -- 分布式调度中心[4060]
-├    ├── pig-mc-service -- 消息中心[4050]
-├    ├── pig-sso-client-demo -- 单点登录客户端示例[4040]
-├    └── pig-upms-service -- 权限管理提供[4000]
-└── pig-visual  -- 图形化模块 
-     ├── pig-monitor -- 服务状态监控、turbine [5001]
-     ├── pig-zipkin-elk -- zipkin、ELK监控[5002、5601]
-     └── pig-cache-cloud -- 缓存管理、统一监控[5005]
+[点击查看详情](https://gitee.com/smallweigit/avue/wikis/vip )
+
+#### 百度云课程
+<p align="center">
+  <img width="600" src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-bg.png">
+</p>
+
+- [B站视频](https://www.bilibili.com/video/av24644922)
+- [1.Avue修仙系列之基础环境的准备和课程介绍](https://pan.baidu.com/s/1ZBgYby4K8yQC3U4mevuk8A)
+- [2.Avue修仙系列之avue-crud组件type属性介绍](https://pan.baidu.com/s/1jo1yx128sSJgnRnECtvEEw#list/path=%2F)
+- [3.Avue修仙系列之avue-crud本地字典的使用方法](https://pan.baidu.com/s/1i193Ced5d65_i1wXdVSchQ)
+- [4.Avue修仙系列之avue-crud后台接口字典的使用方法](https://pan.baidu.com/s/1TKZSu4K6mac4wio8qDdFJQ)
+- 未完待续
+
+#### avue综合实际实例
+- [crud综合例子](http://sandbox.runjs.cn/show/xjjyj1cj)
+- [crud流程例子](https://sandbox.runjs.cn/show/hnhjz9wn)
+- [crud多级联动例子](https://sandbox.runjs.cn/show/vigm1mvl)
+- [crud动态切换](https://sandbox.runjs.cn/show/e5kht8ed)
+- 未完待续
+
+#### avue相关地址
+欢迎加入QQ交流群，互相学习   
+前端avue交流群：606410437  
+后台微服务群：23754102   
+服务端解决方案：[https://gitee.com/log4j/pig](https://gitee.com/log4j/pig)   
+刚入门的前端小师妹博客:[https://my.oschina.net/u/3883702/](https://my.oschina.net/u/3883702/)   
+最近很多人反应不太会用crud快速开发组件，因此免费推出crud系列的讲解课程，详情请加QQ群
+
+#### avue-cli 1.x演示地址
+- [演示地址1:http://avue.2bugs.cn](http://avue.2bugs.cn)
+- [演示地址2:http://122.4.247.156:7777](http://122.4.247.156:7777)
+
+#### 技术文档
+- [avue技术文档](https://www.kancloud.cn/smallwei/avue/)
+
+#### 源码地址
+- [码云地址:https://gitee.com/smallweigit/avue](https://gitee.com/smallweigit/avue)
+- [github地址：https://github.com/nmxiaowei/avue](https://github.com/nmxiaowei/avue)
+
+#### 更新日志
+本项目以更新到最新的vue-cli@3.0的脚手架，更多使用请去vue官方查看  
+- [更新日志](./UPDATE.md)
+
+### Avue
+基于数据驱动视图的思想，根据json数据快速构建crud和form等组件  
+依赖包:  
+* axios：发送ajax数据用到的包
+* element-ui：可视化UI组件
+* 引入avue之前先引入上面这俩个包
+
+#### CDN
 ```
-###  已完成功能
-- 完善登录：账号密码模式、短信验证码模式、社交账号模式均整合Spring security oAuth
-- 单点登录：基于Srping security oAuth 提供单点登录接口，方便其他系统对接
-- 用户管理：用户是系统操作者，该功能主要完成系统用户配置。
-- 机构管理：配置系统组织机构（公司、部门、小组），树结构展现，可随意调整上下级。
-- 菜单管理：配置系统菜单，操作权限，按钮权限标识等。
-- 角色管理：角色菜单权限分配、设置角色按机构进行数据范围权限划分。
-- 字典管理：对系统中经常使用的一些较为固定的数据进行维护，如：是否、男女、类别、级别等。
-- 操作日志：系统正常操作日志记录和查询；系统异常信息日志记录和查询。
-- 服务限流：多种维度的流量控制（服务、IP、用户等）
-- 消息总线：配置动态实时刷新
-- 分库分表：shardingdbc分库分表策略
-- 数据权限: 使用mybatis对原查询做增强，业务代码不用控制，即可实现。
-- 文件系统: 支持FastDFS、七牛云，扩展API几行代码实现上传下载
-- 消息中心：短信、邮件模板发送，几行代码实现发送
-- 聚合文档：基于zuul实现 swagger各个模块的实现
-- 代码生成：前后端代码的生成，支持Vue
-- 缓存管理：基于Cache Cloud 保证Redis 的高可用
-- 服务监控: Spring Boot Admin
-- 分布式任务调度： 基于elastic-job的分布式文件系统，zookeeper做调度中心
-- zipkin链路追踪： 数据保存ELK，图形化展示
-- pinpoint链路追踪： 数据保存hbase，图形化展示
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@smallwei/avue@1.0.4/lib/theme-chalk/index.css" />
 
-欢迎加入交流群，互相学习  
-一键加群：<a target="_blank" href="https://jq.qq.com/?_wv=1027&k=5zWEvg5"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png"></a>   
-![image](http://oss.wjg95.cn/pig_qq_qun.png)
+<script src="https://cdn.jsdelivr.net/npm/@smallwei/avue@1.0.4/lib/index.min.js"></script>
 
-### 截图 （点击可大图预览）
-<table>
+#### npm
+npm i @smallwei/avue --save
+
+#### yarn
+yarn add @samallwei/avue --save
+
+```
+
+#### 使用方式
+```
+import Element from 'element-ui'
+import axios from 'axios'
+import Avue from @smallwei/avue/lib/index.js
+import @smallwei/avue/lib/theme-chalk/index.css
+
+Vue.use(Element);
+Vue.use(Avue,axios)
+
+```
+
+#### 功能结构
+```
+- 全局错误日志记录
+- vuex持久化存储
+- 主题色切换
+- 锁屏
+- SSR渲染页面
+- 数据展示
+- 登录/注销
+ - 用户名登录
+ - 验证码登录
+- 权限验证
+- 第三方网站嵌套
+- CRUD(增删改查)
+- FORM(动态生成)
+- 阿里巴巴图标库(在线调用)
+- 环境变量
+- 表格树
+- 引导页
+- 数据持久化
+- 剪切板
+- 系统管理
+ - 用户管理
+ - 角色管理
+ - 菜单管理
+- 高级路由
+ - 动态路由
+ - 参数路由
+- 更多功能开在开发
+```
+
+### 页面展示 （点击可大图预览）
+<table border="0">
     <tr>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/login.png"/></td>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/1.png"/></td>
+        <td align="center">炫彩主题<img width="500" src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-color.png"/></td>
+        <td align="center">主题色<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-theme.png"/></td>
     </tr>
     <tr>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/2.png"/></td>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/3.png"/></td>
+        <td align="center">数据持久化<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-store.png"/></td>
+        <td align="center">环境变量<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-dev.png"/></td>
     </tr>
     <tr>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/4.png"/></td>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/5.png"/></td>
+        <td align="center">表格树<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-table-tree.png"/></td>
+        <td align="center">登录<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-login.png"/></td>
     </tr>
     <tr>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/6.png"/></td>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/7.png"/></td>
+        <td align="center">权限测试<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-roles-test.png"/></td>
+        <td align="center">数据展示<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-datashow.png"/></td>
     </tr>
     <tr>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/8.png"/></td>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/9.png"/></td>
+        <td align="center">错误页面<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-errpage.png"/></td>
+        <td align="center">错误日志<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-errlog.png"/></td>
+    </tr>
+     <tr>
+        <td align="center">CRUD<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-crud.png"/></td>
+        <td align="center">FORM<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-form.png"/></td>
     </tr>
     <tr>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/10.png"/></td>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/11.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/12.png"/></td>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/13.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/14.png"/></td>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/15.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/16.png"/></td>
-        <td><img src="http://p3blpcsde.bkt.clouddn.com/17.png"/></td>
+        <td align="center">阿里巴巴图标库(在线调用)<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-ali.png"/></td>
+        <td align="center">主页<img width="500"  src="https://gitee.com/smallweigit/avue/raw/master/public/cdn/images/avue-index.png"/></td>
     </tr>
 </table>
 
+
+#### 开发
+```bash
+# 克隆项目
+git clone https://gitee.com/smallweigit/avue.git
+
+# 进入项目
+cd avue
+
+# 安装依赖
+npm install --registry=https://registry.npm.taobao.org
+
+# 启动服务
+npm run serve
+
+```
+
+
+#### vue-ui启动
+```bash
+1.npm install -g @vue/cli 全局安装vue脚手架最新版  
+2.vue --version 查看版本是否为3.x版本  
+3.vue-ui 运行管理工具，导入avue-cli项目  
+
+```
+
+
+#### 调试与发布
+```bash
+# 构建测试环境
+npm run serve
+
+# 构建生成环境
+npm run build
+
+```
+
+
+#### 其它
+```bash
+# 代码检测
+npm run lint
+
+# 单元测试
+npm run test:unit2
+```
+
+#### 友情链接
+- [d2-admin](https://github.com/FairyEver/d2-admin)
+
+#### License
+[MIT](https://gitee.com/smallweigit/avue/blob/master/LICENSE)
+
+Copyright (c) 2017-present Smallwei
