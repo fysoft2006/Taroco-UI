@@ -1,5 +1,3 @@
-
-
 const DIC = {
   vaild: [{
     label: '否',
@@ -19,6 +17,7 @@ export const tableOption = {
   "align": "center",
   "editBtn": false,
   "delBtn": false,
+  "addBtn": false,
   "dic": [],
   "column": [{
     width: 150,
@@ -32,7 +31,7 @@ export const tableOption = {
       trigger: "blur"
     }]
   }, {
-    width: 300,
+    width: 150,
     label: "密钥",
     prop: "clientSecret",
     align: 'center',
@@ -43,7 +42,7 @@ export const tableOption = {
       trigger: "blur"
     }]
   }, {
-    label: "域",
+    label: "Scope",
     prop: "scope",
     align: 'center',
     width: 150,
@@ -56,8 +55,12 @@ export const tableOption = {
     label: "授权模式",
     prop: "authorizedGrantTypes",
     align: 'center',
-    width: 150,
-    hide: true,
+    width: 300,
+    overHidden: true,
+    type: 'textarea',
+    maxRow: 4,
+    minRow: 4,
+    span: 24,
     rules: [{
       required: true,
       message: "请输入授权模式",
@@ -67,8 +70,12 @@ export const tableOption = {
     label: "回调地址",
     prop: "webServerRedirectUri",
     align: 'center',
-    width: 150,
-    hide: true,
+    width: 300,
+    overHidden: true,
+    type: 'textarea',
+    maxRow: 4,
+    minRow: 4,
+    span: 24,
   }, {
     label: "权限",
     prop: "authorities",

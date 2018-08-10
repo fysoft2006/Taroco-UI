@@ -27,11 +27,6 @@ export default {
         //   href: "https://github.com/liuht777/Taroco/wiki",
         //   parentId: 1
         // },
-        {
-          label: "crud实例",
-          href: "/crud/index",
-          parentId: 2
-        }
       ]
     };
   },

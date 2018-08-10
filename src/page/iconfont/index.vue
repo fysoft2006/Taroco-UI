@@ -1,107 +1,106 @@
 <template>
-  <div>
-    <basic-container>
-      <h3 style="color:red;">修改./src/config/env.js中的iconfontVersion地址即可实时调用阿里云在线图标库</h3>
-      <ul class="icon-list">
-        <li>
-          <span>
-            <i class="icon-daohanglanmoshi02"></i>
-            <span class="icon-name">icon-daohanglanmoshi02</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-changyonglogo27"></i>
-            <span class="icon-name">icon-changyonglogo27</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-biaoge"></i>
-            <span class="icon-name">icon-biaoge</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-baidu1"></i>
-            <span class="icon-name">icon-baidu1</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-tubiao"></i>
-            <span class="icon-name">icon-tubiao</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-souhu"></i>
-            <span class="icon-name">icon-souhu</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-msnui-360"></i>
-            <span class="icon-name">icon-msnui-360</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-iframe"></i>
-            <span class="icon-name">icon-iframe</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-huanyingye"></i>
-            <span class="icon-name">icon-huanyingye</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-weixin"></i>
-            <span class="icon-name">icon-weixin</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-qq"></i>
-            <span class="icon-name">icon-qq</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-tuichu"></i>
-            <span class="icon-name">icon-tuichu</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-jiaoseguanli"></i>
-            <span class="icon-name">icon-jiaoseguanli</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-yonghuguanli"></i>
-            <span class="icon-name">icon-yonghuguanli</span>
-          </span>
-        </li>
-        <li>
-          <span>
-            <i class="icon-caidanguanli"></i>
-            <span class="icon-name">icon-caidanguanli</span>
-          </span>
-        </li>
-      </ul>
-      <img class="iconfon-explace"
-           src="http://oetrwxnhv.bkt.clouddn.com/avue-iconfont.png"
-           alt="">
-    </basic-container>
+  <div class="app-container">
+    <h3 style="color:red;">修改./src/config/env.js中的iconfontVersion地址即可实时调用阿里云在线图标库</h3>
+    <ul class="icon-list">
+      <li>
+        <span>
+          <i class="icon-daohanglanmoshi02"></i>
+          <span class="icon-name">icon-daohanglanmoshi02</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-changyonglogo27"></i>
+          <span class="icon-name">icon-changyonglogo27</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-biaoge"></i>
+          <span class="icon-name">icon-biaoge</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-baidu1"></i>
+          <span class="icon-name">icon-baidu1</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-tubiao"></i>
+          <span class="icon-name">icon-tubiao</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-souhu"></i>
+          <span class="icon-name">icon-souhu</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-msnui-360"></i>
+          <span class="icon-name">icon-msnui-360</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-iframe"></i>
+          <span class="icon-name">icon-iframe</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-huanyingye"></i>
+          <span class="icon-name">icon-huanyingye</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-weixin"></i>
+          <span class="icon-name">icon-weixin</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-qq"></i>
+          <span class="icon-name">icon-qq</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-tuichu"></i>
+          <span class="icon-name">icon-tuichu</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-jiaoseguanli"></i>
+          <span class="icon-name">icon-jiaoseguanli</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-yonghuguanli"></i>
+          <span class="icon-name">icon-yonghuguanli</span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <i class="icon-caidanguanli"></i>
+          <span class="icon-name">icon-caidanguanli</span>
+        </span>
+      </li>
+    </ul>
+    <img class="iconfon-explace"
+          src="http://oetrwxnhv.bkt.clouddn.com/avue-iconfont.png"
+          alt="">
   </div>
 </template>
 
 <script>
+import {iconfontUrl, iconfontVersion} from '@/config/env';
 export default {
   name: "iconfont",
   data () {

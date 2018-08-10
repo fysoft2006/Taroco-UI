@@ -17,6 +17,7 @@ export const tableOption = {
   "align": "center",
   "editBtn": false,
   "delBtn": false,
+  "addBtn": false,
   "dic": [],
   "column": [{
     width: 150,
