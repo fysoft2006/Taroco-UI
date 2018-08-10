@@ -32,7 +32,7 @@ export default [{
   children: [{
     path: 'index',
     name: 'crud实例',
-    component: _import('crud/index', 'views')
+    component: _import('crud/index', 'page')
   }]
 }, {
   path: '/info',
