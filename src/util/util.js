@@ -1,6 +1,10 @@
-import {validatenull} from './validate'
-import {config} from './config';
-
+import {
+  validatenull
+} from './validate';
+import {
+  baseUrl
+} from '@/config/env';
+import website from '@/const/website';
 export const initMenu = (router, menu) => {
   if (menu.length === 0) {
     return
@@ -25,7 +29,7 @@ export const formatRoutes = (aMenu) => {
         component(resolve) {
           let componentPath = ''
           if (component === 'Layout') {
-            require(['../containers/Index'], resolve)
+            require(['../page/index'], resolve)
             return
           } else {
             componentPath = component
@@ -61,15 +65,15 @@ export const encryption = (params) => {
   } else {
     param.forEach(ele => {
       var data = result[ele]
-      key = CryptoJS.enc.Latin1.parse(key)
+      key  = CryptoJS.enc.Latin1.parse(key)
       var iv = key
       //加密
       var encrypted = CryptoJS.AES.encrypt(
         data,
-        key, {
-          iv: iv,
-          mode: CryptoJS.mode.CBC,
-          padding: CryptoJS.pad.ZeroPadding
+        key,
+        { iv:iv,
+          mode:CryptoJS.mode.CBC,
+          padding:CryptoJS.pad.ZeroPadding
         })
       result[ele] = encrypted.toString()
     })
@@ -81,7 +85,7 @@ export const encryption = (params) => {
  * 设置浏览器头部标题
  */
 export const setTitle = function (title) {
-  title = title ? `${title}——Taroco: Spring Cloud 微服务敏捷开发方案` : 'Taroco: Spring Cloud 微服务敏捷开发方案';
+  title = title ? `${title}——${website.info.title}` : `${website.info.title}`;
   window.document.title = title
 }
 /**
@@ -178,7 +182,7 @@ export const resolveUrlPath = (url, name) => {
   let reqUrl = url
   if (url.indexOf('#') !== -1 && url.indexOf('http') === -1) {
     const port = reqUrl.substr(reqUrl.indexOf(':'))
-    reqUrl = `/myiframe/urlPath?src=${config.baseURL}${port}${reqUrl.replace('#', '').replace(port, '')}}&name=${name}`
+    reqUrl = `/myiframe/urlPath?src=${baseUrl}${port}${reqUrl.replace('#', '').replace(port, '')}}&name=${name}`
   } else if (url.indexOf('http') !== -1) {
     reqUrl = `/myiframe/urlPath?src=${reqUrl}&name=${name}`
   } else {
