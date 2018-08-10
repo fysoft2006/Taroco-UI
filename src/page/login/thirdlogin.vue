@@ -2,20 +2,17 @@
 
 <template>
    <div class="third-container">
-     <img :src="qqCode" class="third-icon qq"  />
-     <img :src="wechatCode" class="third-icon wechat" />
+     <img src="/img/code/qq-code.jpg" class="third-icon qq"  />
+     <img src="/img/code/wechat-code.jpg" class="third-icon wechat" />
    </div>
 </template>
 
 <script>
-import qqCode from "@/assets/img/code/qq-code.jpg";
-import wechatCode from "@/assets/img/code/wechat-code.jpg";
 export default {
   name: "thirdlogin",
   data() {
     return {
-      qqCode: qqCode,
-      wechatCode: wechatCode
+      
     };
   },
   created() {},
