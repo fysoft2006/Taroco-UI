@@ -27,6 +27,16 @@ export default [{
     component: _import('lock/index')
   },
   {
+    path: '/serviceInfo',
+    component: Layout,
+    redirect: '/serviceInfo/index',
+    children: [{
+      path: 'index',
+      name: '服务详情',
+      component: _import('service/ServiceDetail', 'views')
+    }]
+  },
+  {
     path: '/info',
     component: Layout,
     redirect: '/info/index',
