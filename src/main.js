@@ -2,8 +2,6 @@ import Vue from 'vue'
 import VueAxios from 'vue-axios'
 import App from './App';
 import axios from './router/axios'
-import ElementUI from 'element-ui'
-import locale from 'element-ui/lib/locale/lang/zh-CN'
 import './permission' // 权限
 import './errorLog' // 错误日志
 import router from './router/router'
@@ -26,8 +24,6 @@ import basicContainer from './components/basic-container/main'
 import VueClipboard from 'vue-clipboard2'
 // 插件 json 展示
 import vueJsonTreeView from 'vue-json-tree-view'
-
-Vue.use(ElementUI, { locale });
 
 Vue.use(VueClipboard)
 
