@@ -2,9 +2,9 @@
     <div>
         <el-row :gutter="10">
             <el-col :span="12">
-                <el-card class="box-card">
+                <el-card class="box-card" shadow="hover">
                     <div slot="header">
-                        <span>classes</span>
+                        <span :style="{color: theme}">classes</span>
                     </div>
                     <div v-for="item in classes" :key="item.name" class="item">
                         <span>{{item.name}}</span>
@@ -13,9 +13,9 @@
                 </el-card>
             </el-col>
             <el-col :span="12">
-                <el-card class="box-card">
+                <el-card class="box-card" shadow="hover">
                     <div slot="header">
-                        <span>gc</span>
+                        <span :style="{color: theme}">gc</span>
                     </div>
                     <div v-for="item in gc" :key="item.name" class="item">
                         <span>{{item.name}}</span>
@@ -24,9 +24,9 @@
                 </el-card>
             </el-col>
             <el-col :span="12">
-                <el-card class="box-card">
+                <el-card class="box-card" shadow="hover">
                     <div slot="header">
-                        <span>threads</span>
+                        <span :style="{color: theme}">threads</span>
                     </div>
                     <div v-for="item in threads" :key="item.name" class="item">
                         <span>{{item.name}}</span>
@@ -35,9 +35,9 @@
                 </el-card>
             </el-col>
             <el-col :span="12">
-                <el-card class="box-card">
+                <el-card class="box-card" shadow="hover">
                     <div slot="header">
-                        <span>heap</span>
+                        <span :style="{color: theme}">heap</span>
                     </div>
                     <div v-for="item in heap" :key="item.name" class="item">
                         <span>{{item.name}}</span>
@@ -47,9 +47,9 @@
             </el-col>
         </el-row>
 
-        <el-card class="box-card">
+        <el-card class="box-card" shadow="hover">
             <div slot="header">
-                <span>counter</span>
+                <span :style="{color: theme}">counter</span>
             </div>
             <div v-for="item in counter" :key="item.name" class="item">
                 <span>{{item.name}}</span>
@@ -57,9 +57,9 @@
             </div>
         </el-card>
 
-        <el-card class="box-card">
+        <el-card class="box-card" shadow="hover">
             <div slot="header">
-                <span>gauge</span>
+                <span :style="{color: theme}">gauge</span>
             </div>
             <div v-for="item in gauge" :key="item.name" class="item">
                 <span>{{item.name}}</span>
@@ -70,12 +70,16 @@
 </template>
 
 <script>
+    import { mapGetters } from "vuex";
     import request from '@/router/axios';
     export default {
         props: {
             instanceId: {
                 type: String
             },
+        },
+        computed: {
+            ...mapGetters(["theme"])
         },
         data() {
             return {

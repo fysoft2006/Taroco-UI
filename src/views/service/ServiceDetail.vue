@@ -15,9 +15,13 @@
             <el-tab-pane label="映射列表" name="mappings">
                 <service-mappings :instanceId="instanceId"></service-mappings>
             </el-tab-pane>
-            <el-tab-pane label="环境参数" name="envs"></el-tab-pane>
+            <el-tab-pane label="环境参数" name="envs">
+                <service-envs :instanceId="instanceId"></service-envs>
+            </el-tab-pane>
             <el-tab-pane label="请求追踪" name="trace"></el-tab-pane>
-            <el-tab-pane label="线程转储" name="heapdump"></el-tab-pane>
+            <el-tab-pane name="heapdump">
+                <span slot="label"><el-button type="text" @click="threadDump">线程dump</el-button></span>
+            </el-tab-pane>
         </el-tabs>
     </div>
 </template>
@@ -26,9 +30,12 @@
     import ServiceLogger from './components/ServiceLogger';
     import ServiceMetrics from './components/ServiceMetrics';
     import ServiceMappings from './components/ServiceMappings';
+    import ServiceEnvs from './components/ServiceEnvs';
+    import { baseUrl } from '@/config/env';
+    import { getToken } from '@/util/auth';
     export default {
         components: {
-            ServiceLogger,ServiceMetrics,ServiceMappings
+            ServiceLogger, ServiceMetrics, ServiceMappings, ServiceEnvs
         },
         data() {
             return {
@@ -37,9 +44,6 @@
                 instanceId: ''
             }
         },
-        computed: {
-            
-        },
         created() {
             if (this.$route.query) {
                 this.serviceName = this.$route.query.serviceName;
@@ -47,7 +51,10 @@
             }
         },
         methods: {
-            
+            threadDump() {
+                const url = baseUrl + '/taroco-admin/api/applications/' + this.instanceId + "/heapdump";
+                window.open(url + '?access_token=' + getToken());
+            }
         },
     }
 </script>
