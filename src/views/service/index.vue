@@ -8,6 +8,9 @@
 				:description="description">
 			</el-alert>
 		</el-row>
+		<div style="text-align: right">
+			<el-button icon="el-icon-refresh" @click="refresh"></el-button>
+		</div>
 		<el-card class="card-layout">
 			<!-- <span slot="header">服务列表</span> -->
 			<service-table ref="ServiceTable" :serviceList="serviceList"></service-table>
@@ -43,6 +46,10 @@ export default {
 		this.queryServiceSum();
 	},
 	methods: {
+		refresh() {
+			this.queryServiceList();
+			this.queryServiceSum();
+		},
 		queryServiceList() {
 			const url = '/taroco-admin/api/applications';
 			request({
