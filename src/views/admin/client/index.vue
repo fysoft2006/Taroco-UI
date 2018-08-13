@@ -15,7 +15,7 @@
         <el-button type="primary" @click="handleAdd" size="small" v-if="permissions.sys_client_add">新 增</el-button>
       </template>
       <template slot-scope="scope" slot="menu">
-        <el-button type="primary" v-if="permissions.sys_client_upd" icon="el-icon-check" size="small" plain @click="handleEdit(scope.row,scope.index)">编辑</el-button>
+        <el-button type="primary" v-if="permissions.sys_client_upd" icon="el-icon-edit" size="small" plain @click="handleEdit(scope.row,scope.index)">编辑</el-button>
         <el-button type="danger" v-if="permissions.sys_client_del" icon="el-icon-delete" size="small" plain @click="handleDel(scope.row,scope.index)">删除</el-button>
       </template>
     </avue-crud>

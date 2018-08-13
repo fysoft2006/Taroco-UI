@@ -18,9 +18,11 @@
             <el-tab-pane label="环境参数" name="envs">
                 <service-envs :instanceId="instanceId"></service-envs>
             </el-tab-pane>
-            <el-tab-pane label="请求追踪" name="trace"></el-tab-pane>
+            <el-tab-pane label="请求追踪" name="trace">
+                <service-trace :instanceId="instanceId"></service-trace>
+            </el-tab-pane>
             <el-tab-pane name="heapdump">
-                <span slot="label"><el-button type="text" @click="threadDump">线程dump</el-button></span>
+                <span slot="label"><el-button type="text" @click="threadDump">线程DUMP</el-button></span>
             </el-tab-pane>
         </el-tabs>
     </div>
@@ -31,11 +33,12 @@
     import ServiceMetrics from './components/ServiceMetrics';
     import ServiceMappings from './components/ServiceMappings';
     import ServiceEnvs from './components/ServiceEnvs';
+    import ServiceTrace from './components/ServiceTrace';
     import { baseUrl } from '@/config/env';
     import { getToken } from '@/util/auth';
     export default {
         components: {
-            ServiceLogger, ServiceMetrics, ServiceMappings, ServiceEnvs
+            ServiceLogger, ServiceMetrics, ServiceMappings, ServiceEnvs, ServiceTrace
         },
         data() {
             return {

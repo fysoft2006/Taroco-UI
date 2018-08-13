@@ -16,7 +16,7 @@
         <el-button type="success" @click="handleApply" size="small" v-if="permissions.sys_route_add">同 步</el-button>
       </template>
       <template slot-scope="scope" slot="menu">
-        <el-button type="primary" v-if="permissions.sys_route_upd" icon="el-icon-check" size="mini" plain @click="handleEdit(scope.row,scope.index)">编辑</el-button>
+        <el-button type="primary" v-if="permissions.sys_route_upd" icon="el-icon-edit" size="mini" plain @click="handleEdit(scope.row,scope.index)">编辑</el-button>
         <el-button type="danger" v-if="permissions.sys_route_del" icon="el-icon-delete" size="mini" plain @click="handleDel(scope.row,scope.index)">删除</el-button>
       </template>
     </avue-crud>

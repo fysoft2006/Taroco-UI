@@ -22,7 +22,7 @@ import * as filters from './filters' // 全局filter
 import './styles/common.scss'
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+Vue.use(ElementUI, { size: 'small' })
 Vue.use(VueMoment)
 Vue.use(VueAxios, axios)
 

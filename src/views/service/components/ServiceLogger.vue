@@ -13,7 +13,7 @@
             :data="loggers" 
             tooltip-effect="dark" 
             style="width: 100%"
-            height="600" stripe>
+            stripe>
              <el-table-column
                 type="index"
                 width="50">

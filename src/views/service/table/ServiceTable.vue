@@ -1,7 +1,6 @@
 <template>
   <el-table
     :data="serviceList"
-    height="640"
     tooltip-effect="dark"
     style="width: 100%">
     <el-table-column

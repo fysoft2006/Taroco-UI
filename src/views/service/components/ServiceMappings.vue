@@ -1,7 +1,6 @@
 <template>
     <el-table
-        :data="mappings"
-        height="640"
+        :data="mappings" stripe
         tooltip-effect="dark"
         style="width: 100%">
         <el-table-column

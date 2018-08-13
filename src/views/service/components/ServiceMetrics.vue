@@ -1,71 +1,22 @@
 <template>
     <div>
         <el-row :gutter="10">
-            <el-col :span="12">
-                <el-card class="box-card" shadow="hover">
-                    <div slot="header">
-                        <span :style="{color: theme}">classes</span>
-                    </div>
-                    <div v-for="item in classes" :key="item.name" class="item">
-                        <span>{{item.name}}</span>
-                        <span class="value">{{item.value}}</span>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="12">
-                <el-card class="box-card" shadow="hover">
-                    <div slot="header">
-                        <span :style="{color: theme}">gc</span>
-                    </div>
-                    <div v-for="item in gc" :key="item.name" class="item">
-                        <span>{{item.name}}</span>
-                        <span class="value">{{item.value}}</span>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="12">
-                <el-card class="box-card" shadow="hover">
-                    <div slot="header">
-                        <span :style="{color: theme}">threads</span>
-                    </div>
-                    <div v-for="item in threads" :key="item.name" class="item">
-                        <span>{{item.name}}</span>
-                        <span class="value">{{item.value}}</span>
-                    </div>
-                </el-card>
-            </el-col>
-            <el-col :span="12">
-                <el-card class="box-card" shadow="hover">
-                    <div slot="header">
-                        <span :style="{color: theme}">heap</span>
-                    </div>
-                    <div v-for="item in heap" :key="item.name" class="item">
-                        <span>{{item.name}}</span>
-                        <span class="value">{{item.value}}</span>
-                    </div>
-                </el-card>
+            <el-col :span="24">
+                <el-collapse accordion>
+                    <el-collapse-item class="box-card" v-for="(key, item) in metricsAll" :key="instanceId + '-' + item">
+                        <template slot="title">
+                            <h3 :style="{color: theme}">
+                                <i class="el-icon-info"></i> {{item}}
+                            </h3>
+                        </template>
+                        <div v-for="(entry, index) in key" class="item">
+                            <span>{{entry.name}}</span>
+                            <span class="value">{{entry.value}}</span>
+                        </div>
+                    </el-collapse-item>
+                </el-collapse>
             </el-col>
         </el-row>
-
-        <el-card class="box-card" shadow="hover">
-            <div slot="header">
-                <span :style="{color: theme}">counter</span>
-            </div>
-            <div v-for="item in counter" :key="item.name" class="item">
-                <span>{{item.name}}</span>
-                <span class="value">{{item.value}}</span>
-            </div>
-        </el-card>
-
-        <el-card class="box-card" shadow="hover">
-            <div slot="header">
-                <span :style="{color: theme}">gauge</span>
-            </div>
-            <div v-for="item in gauge" :key="item.name" class="item">
-                <span>{{item.name}}</span>
-                <span class="value">{{item.value}}</span>
-            </div>
-        </el-card>
     </div>
 </template>
 
@@ -89,7 +40,8 @@
                 gc: [],
                 heap: [],
                 threads: [],
-                classes: []
+                classes: [],
+                metricsAll: {}
             }
         },
         watch: {
@@ -140,6 +92,15 @@
                         }
                     }
                 }
+
+                this.metricsAll = {
+                    classes: this.classes,
+                    counter: this.counter,
+                    gauge: this.gauge,
+                    gc: this.gc,
+                    heap: this.heap,
+                    threads: this.threads
+                }
             }
         },
         methods: {
@@ -167,9 +128,11 @@
     }
 
     .item{
+        font-size: 14px;
         margin-bottom: 5px;
         .value{
             float: right;
+            margin-right: 10px;
         }
     }
 </style>
