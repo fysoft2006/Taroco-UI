@@ -1,29 +1,53 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App'
-import {router} from './router'
-import store from './store'
-import moment from "moment";
-import VueMomentJS from "vue-momentjs";
 import VueAxios from 'vue-axios'
-import axios from './util/axios'
+import ElementUI from 'element-ui'
+import VueMoment from 'vue-moment'
+import App from './App';
+import "babel-polyfill";
+import axios from './router/axios'
 import './permission' // 权限
-
-Vue.use(VueMomentJS, moment);
-Vue.use(VueAxios, axios)
-
-import './element-ui'
-
-import '@/styles/main.scss'
+import './errorLog' // 错误日志
+import router from './router/router'
+import store from './store'
+import AVUE from 'avue-cli/lib/avue.js'
+import {
+  loadStyle
+} from './util/util'
+import * as urls from '@/config/env'
+import {
+  iconfontUrl,
+  iconfontVersion
+} from '@/config/env'
+import * as filters from './filters' // 全局filter
+import './styles/common.scss'
 
 Vue.config.productionTip = false
+Vue.use(ElementUI, { size: 'small' })
+Vue.use(VueMoment)
+Vue.use(VueAxios, axios)
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  store,
-  components: { App },
-  template: '<App/>'
+Object.keys(urls).forEach(key => {
+  Vue.prototype[key] = urls[key]
 })
+
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+
+iconfontVersion.forEach(ele => {
+  loadStyle(iconfontUrl.replace('$key', ele))
+})
+
+
+export function createApp() {
+  const app = new Vue({
+    router,
+    store,
+    render: h => h(App)
+  })
+  return {
+    app,
+    router,
+    store
+  }
+}

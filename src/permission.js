@@ -1,19 +1,29 @@
-import {router} from './router'
+import router from './router/router'
 import store from './store'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
+import { setTitle } from '@/util/util'
 
 // NProgress Configuration
 NProgress.configure({
   showSpinner: false
 })
 
-const whiteList = ['/login', '/404', '/401', '/lock']
+const whiteList = ['/login', '/404', '/401', "/500", '/lock']
 const lockPage = '/lock'
 
 router.beforeEach((to, from, next) => {
   // start progress bar
   NProgress.start()
+  const value = to.query.src ? to.query.src : to.path
+  const label = to.query.name ? to.query.name : to.name
+  if (whiteList.indexOf(value) === -1) {
+    store.commit('ADD_TAG', {
+      label: label,
+      value: value,
+      query: to.query
+    })
+  }
   if (store.getters.access_token) { // determine if there has token
     /* has token*/
     if (store.getters.isLock && to.path !== lockPage) {
@@ -29,8 +39,7 @@ router.beforeEach((to, from, next) => {
     } else {
       if (store.getters.roles.length === 0) {
         store.dispatch('GetUserInfo').then(res => {
-          const roles = res.roles;
-          store.commit('SET_ROLES', roles);
+          const roles = res.roles
           next({ ...to,
             replace: true
           })
@@ -57,6 +66,19 @@ router.beforeEach((to, from, next) => {
   }
 })
 
+// 寻找子菜单的父类
+function findMenuParent(tag) {
+  let tagCurrent = []
+  const menu = store.getters.menu
+  tagCurrent.push(tag)
+  return tagCurrent;
+}
+
 router.afterEach((to, from) => {
-  NProgress.done();
+  NProgress.done()
+  setTimeout(() => {
+    const tag = store.getters.tag
+    setTitle(tag.label)
+    store.commit('SET_TAG_CURRENT', findMenuParent(tag))
+  }, 0)
 })
