@@ -137,9 +137,10 @@
           // Turbine监控
             let url = config.turbine_prefix + '/hystrix/monitor?stream=' + encodeURIComponent(config.turbine_prefix + '/turbine.stream?cluster='+row.name.toUpperCase());
             this.$router.push({
-              path: resolveUrlPath(url, 'Turbine监控'),
+              path: '/myiframe/urlPath',
               query: {
-                url: url
+                src: url,
+                name: 'Turbine监控'
               }
             });
             break;
